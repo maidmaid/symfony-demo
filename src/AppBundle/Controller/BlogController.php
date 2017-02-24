@@ -48,7 +48,8 @@ class BlogController extends Controller
      */
     public function indexAction($page, $_format)
     {
-        $posts = $this->getDoctrine()->getRepository(Post::class)->findLatest($page);
+        $this->get('logger')->info('coucou');
+        $posts = $this->getDoctrine()->getRepository(Post::class)->findLatest($page);        
 
         // Every template name also has two extensions that specify the format and
         // engine for that template.
